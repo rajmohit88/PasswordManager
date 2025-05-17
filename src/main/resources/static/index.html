@@ -1,0 +1,44 @@
+<!-- src/main/resources/static/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Manager</title>
+  <script src="script.js" ></script>
+  <style>
+    body { font-family: Arial; margin: 20px; padding: 0; }
+    input, button { margin: 5px; padding: 6px; }
+    #result { margin-top: 20px; color: green; }
+    table, th, td { border: 1px solid black; border-collapse: collapse; padding: 8px; }
+  </style>
+</head>
+<body>
+<h2>Password Manager</h2>
+
+<div>
+  <input id="username" placeholder="Username" />
+  <input id="service" placeholder="Service" />
+  <input id="password" type="password" placeholder="Password" />
+  <button onclick="savePassword()">Save</button>
+</div>
+
+<div>
+  <input id="getUsername" placeholder="Username" />
+  <input id="getService" placeholder="Service" />
+  <button onclick="getPassword()">Get Password</button>
+  <p id="fetchedPassword"></p>
+</div>
+
+<div>
+  <button onclick="getAll()">Show All Credentials</button>
+  <table id="credentialsTable" style="display:none;">
+    <thead>
+    <tr><th>Username</th><th>Service</th><th>Encrypted Password</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<div id="result"></div>
+</body>
+</html>
